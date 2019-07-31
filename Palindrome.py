@@ -1,5 +1,6 @@
 
 def CheckPalindrome(inputString):
+    inputString = inputString.lower()
     reverseString = "" 
     for s in inputString: 
         reverseString = s + reverseString
@@ -8,6 +9,5 @@ def CheckPalindrome(inputString):
     else:
         print("String is not a palindrome")
 
-inputString = "palindrome"
-inputString = inputString.lower()
+inputString = "redivideR"
 CheckPalindrome(inputString)
