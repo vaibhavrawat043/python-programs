@@ -1,0 +1,28 @@
+<html>
+
+<head>
+    <title>Student details</title>
+</head>
+
+<body>
+    <table border="1">
+        <thead>
+            <th>Roll Number</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Age</th>
+        </thead>
+        <tbody>
+            {% for k,v in data.iteritems() %}
+            <tr>
+                <td>{{ k }}</td>
+                {% for i in v %}
+                <td>{{i}}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+
+</html>
