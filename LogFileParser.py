@@ -7,10 +7,8 @@ def logParser():
     listLines = re.split('\n',logFile)
     output = open("outputLog.txt", "w") 
     for i in listLines:
-        if('[Error]' in i):
-           output.write(i+"\n")
-        if('[Warning]' in i):
-           output.write(i+"\n")
+        if('[Error]' in i or '[Warning]' in i) :
+            output.write(i+"\n")
     output.close()
 
 logParser()
