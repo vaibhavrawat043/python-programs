@@ -1,29 +1,29 @@
 class Path:
     def __init__(self, path):
-        self.current_path = path
+        self.currentPath = path
 
     def cd(self, new_path):
         i=0;
-        new_pathList=new_path.split('/')
-        pathLength=len(new_pathList)
-        pathList=self.current_path.split('/')
-        #print(new_pathList)
-        if new_pathList[0]=='':
+        newPathList=new_path.split('/')
+        pathLength=len(newPathList)
+        pathList=self.currentPath.split('/')
+        #print(newPathList)
+        if newPathList[0]=='':
             #direct pathname
             del pathList[:]
-            pathList.append('/'+new_pathList[1])
+            pathList.append('/'+newPathList[1])
             i=i+2
         while(i<pathLength):
             j=len(pathList)-1
-            if new_pathList[i]=='..':
+            if newPathList[i]=='..':
                 #parent directory
                 pathList.pop(j)
             else:
-                pathList.append(new_pathList[i])
+                pathList.append(newPathList[i])
             i=i+1
-        self.current_path="/".join(pathList)
+        self.currentPath="/".join(pathList)
 
 
 path = Path('/a/b/c/d')
-path.cd('../z')
-print(path.current_path)
+path.cd('../x')
+print(path.currentPath)
